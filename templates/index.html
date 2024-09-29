@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maps and Places Autocomplete</title>
+    <!-- Google Maps Extended Component Library -->
+    <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <!-- Google Maps API Loader with your API Key -->
+    <gmpx-api-loader key="GET_API_TOKEN" solution-channel="GMP_GE_mapsandplacesautocomplete_v1">
+    </gmpx-api-loader>
+
+    <!-- Map container -->
+    <gmp-map center="40.749933,-73.98633" zoom="13" map-id="DEMO_MAP_ID">
+      <div slot="control-block-start-inline-start" class="place-picker-container">
+        <gmpx-place-picker placeholder="Enter an address"></gmpx-place-picker>
+      </div>
+    </gmp-map>
+
+    <!-- Link to your external JavaScript file (index.js) -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
